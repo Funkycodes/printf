@@ -87,18 +87,29 @@ int _printf(const char *format, ...)
 				count += 2;
 				break;
 			case 'o':
-				nm = va_arg(list, unsigned int);
+				num = va_arg(list, int);
+				if (num < 0)
+				{
+					num *= -1;
+					_putchar('-');
+					printed++;
+				}
 				_printd(nm, 8);
 				count += 2;
 				printed += numlen(nm, 8);
 				break;
 			case 'x':
-			case 'X':
 			case 'p':
-				nm = va_arg(list, int);
-				_printx(nm);
+				num = va_arg(list, int);
+				if (num < 16)
+				{
+					num *= -1;
+					printed++;
+					_putchar('-');
+				}
+				_printx(num);
 				count += 2;
-				printed += numlen(nm, 16);
+				printed += numlen(num, 16);
 				break;
 			case '%':
 				_putchar('%');
