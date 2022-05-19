@@ -12,7 +12,8 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	int printed = 0, count = 0;
-	unsigned int long num;
+	int long num;
+	unsigned int nm;
 	char *s;
 	char c;
 	double f;
@@ -50,10 +51,10 @@ int _printf(const char *format, ...)
 				count += 2;
 				break;
 			case 'b':
-				num = va_arg(list,unsigned int);
-				printed += numlen(num, 2);
+				nm = va_arg(list,unsigned int);
+				printed += numlen(nm, 2);
 				count += 2;
-				_printd(num, 2);
+				_printd(nm, 2);
 				break;
 			case 'c':
 				c = va_arg(list,unsigned int);
@@ -67,7 +68,7 @@ int _printf(const char *format, ...)
 				{
 					f *= -1;
 					printed++;
-					putchar('-');
+					_putchar('-');
 				}
 				ftoa(f);
 				count += 2;
@@ -80,24 +81,24 @@ int _printf(const char *format, ...)
 				printed += _strlen(s);
 				break;
 			case 'u':
-				num = va_arg(list, unsigned int);
-				_printu((num));
-				printed += numlen(num, 10);
+				nm = va_arg(list, unsigned int);
+				_printu((nm));
+				printed += numlen(nm, 10);
 				count += 2;
 				break;
 			case 'o':
-				num = va_arg(list, unsigned int);
-				_printd(num, 8);
+				nm = va_arg(list, unsigned int);
+				_printd(nm, 8);
 				count += 2;
-				printed += numlen(num, 8);
+				printed += numlen(nm, 8);
 				break;
 			case 'x':
 			case 'X':
 			case 'p':
-				num = va_arg(list, int);
-				_printx(num);
+				nm = va_arg(list, int);
+				_printx(nm);
 				count += 2;
-				printed += numlen(num, 16);
+				printed += numlen(nm, 16);
 				break;
 			case '%':
 				_putchar('%');
