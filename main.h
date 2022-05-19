@@ -13,5 +13,6 @@
 	void _printu(unsigned long int num);
 	void _printx(int num);
 	int _putchar(char c);
+	int _printf(const char *format, ...);
 
 #endif
