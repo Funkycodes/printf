@@ -65,7 +65,7 @@ void _printd(int num, int base)
  * _printu - outputs unsigned int to stdout
  * @num: parameter 
  */
-void _printu(unsigned long int num)
+void _printu(unsigned  int num)
 {
 	_printrev(itoa(num, 10));
 }

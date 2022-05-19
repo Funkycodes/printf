@@ -10,7 +10,7 @@
 	char *itoa(unsigned int num, int base);
 	void ftoa(double n);
 	void _printd(int num, int base);
-	void _printu(unsigned long int num);
+	void _printu(unsigned int num);
 	void _printx(int num);
 	int _putchar(char c);
 	int _printf(const char *format, ...);
