@@ -44,13 +44,13 @@ int _printf(const char *format, ...)
 				count += 2;
 				break;
 			case 'b':
-				num = va_arg(list, int);
+				num = va_arg(list,unsigned int);
 				printed += numlen(num, 2);
 				count += 2;
 				_printd(num, 2);
 				break;
 			case 'c':
-				c = va_arg(list, int);
+				c = va_arg(list,unsigned int);
 				_putchar(c);
 				count += 2;
 				printed += 1;
