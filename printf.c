@@ -94,14 +94,14 @@ int _printf(const char *format, ...)
 					_putchar('-');
 					printed++;
 				}
-				_printd(nm, 8);
+				_printd(num, 8);
 				count += 2;
-				printed += numlen(nm, 8);
+				printed += numlen(num, 8);
 				break;
 			case 'x':
 			case 'p':
 				num = va_arg(list, int);
-				if (num < 16)
+				if (num < 0)
 				{
 					num *= -1;
 					printed++;
