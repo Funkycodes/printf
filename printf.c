@@ -33,6 +33,12 @@ int _printf(const char *format, ...)
 			case 'd':
 			case 'i':
 				num = va_arg(list, int);
+				if (num < 0)
+				{
+					_putchar('-');
+					printed++;
+					num *= -1;
+				}
 				_printd(num, 10);
 				printed += numlen(num, 10);
 				count += 2;
@@ -57,6 +63,12 @@ int _printf(const char *format, ...)
 				break;
 			case 'f':
 				f = va_arg(list, double);
+				if (f < 0)
+				{
+					f *= -1;
+					printed++;
+					putchar('-');
+				}
 				ftoa(f);
 				count += 2;
 				printed += numlen((int)f, 10) + 7;
