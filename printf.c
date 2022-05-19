@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	int printed = 0, count = 0;
-	unsigned int num;
+	unsigned int long num;
 	char *s;
 	char c;
 	double f;
