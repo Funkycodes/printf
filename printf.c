@@ -81,6 +81,7 @@ int _printf(const char *format, ...)
 				break;
 			case 'x':
 			case 'X':
+			case 'p':
 				num = va_arg(list, int);
 				_printx(num);
 				count += 2;
