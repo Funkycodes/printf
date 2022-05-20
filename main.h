@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 	int _strlen(const char *p);
-	void _puts(const char *p);
+	int _puts(const char *p);
 	void _printrev(char *s);
 	int numlen(unsigned int i, int base);
 	char *itoa(unsigned int num, int base);

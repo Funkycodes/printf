@@ -21,5 +21,5 @@ char *hex(unsigned int num, int base)
 		num /= base;
 		*(p + i) = ch;
 	}
-	return p;
+	return (p);
 }

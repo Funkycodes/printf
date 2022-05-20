@@ -5,11 +5,14 @@
  * @p: parameter
  * Return: void
  */
-void _puts(const char *p)
+int _puts(const char *p)
 {
+	if(p == NULL)
+		return NULL;
 	while (*(p))
 	{
 		_putchar(*(p++));
 	}
+	return 0;
 }
 
