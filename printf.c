@@ -80,6 +80,12 @@ int _printf(const char *format, ...)
 				count += 2;
 				printed += _strlen(s);
 				break;
+			case 'R':
+				s = va_arg(list, char *);
+				_puts(rot13(s));
+				count+=2;
+				printed += _strlen(rot13(s));
+				break;
 			case 'u':
 				nm = va_arg(list, unsigned int);
 				_printu((nm));
@@ -99,7 +105,6 @@ int _printf(const char *format, ...)
 				printed += numlen(num, 8);
 				break;
 			case 'x':
-			case 'p':
 				num = va_arg(list, int);
 				if (num < 0)
 				{
@@ -110,6 +115,19 @@ int _printf(const char *format, ...)
 				_printx(num);
 				count += 2;
 				printed += numlen(num, 16);
+				break;
+			case 'X':
+			case 'p':
+				num = va_arg(list, int);
+				if(num < 0)
+				{
+					num *= -1;
+					_putchar('-');
+					printed++;
+				}
+				_printrev(hex(num,16));
+				count += 2;
+				printed += numlen(num,16);
 				break;
 			case '%':
 				_putchar('%');
