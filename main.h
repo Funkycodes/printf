@@ -16,5 +16,5 @@
 	int _putchar(char c);
 	int _printf(const char *format, ...);
 	char *rot13(char *p);
-
+	void S(const char *p, int *printed);
 #endif

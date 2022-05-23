@@ -50,6 +50,11 @@ int _printf(const char *format, ...)
 				printed += _strlen(s);
 				count += 2;
 				break;
+			case 'S':
+				s = va_arg(list, char*);
+				S(s, &printed);
+				count += 2;
+				break;
 			case 'b':
 				nm = va_arg(list,unsigned int);
 				printed += numlen(nm, 2);
@@ -149,4 +154,3 @@ int _printf(const char *format, ...)
 	va_end(list);
 	return (printed);
 }
-
