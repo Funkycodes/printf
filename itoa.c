@@ -7,7 +7,7 @@
  * @base: base number of parameter num
  * Return: pointer to string
  */ 
-char *itoa(unsigned int num, int base)
+char *fitoa(unsigned int num, int base)
 {
 	int len;
 	char *p = malloc(sizeof(char) * numlen(num, base) + 1);
@@ -58,7 +58,7 @@ void _printd(int num, int base)
 		_putchar('-');
 	if (num < 0)
 		num *= -1;
-	_printrev(itoa(num, base));
+	_printrev(fitoa(num, base));
 }
 
 /**
@@ -67,7 +67,7 @@ void _printd(int num, int base)
  */
 void _printu(unsigned  int num)
 {
-	_printrev(itoa(num, 10));
+	_printrev(fitoa(num, 10));
 }
 
 /**
@@ -81,6 +81,6 @@ void _printx(int num)
 		num *= -1;
 		_putchar('-');
 	}
-	_printrev(itoa(num, 16));
+	_printrev(fitoa(num, 16));
 }
 

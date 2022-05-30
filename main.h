@@ -7,7 +7,7 @@
 	void _puts(const char *p);
 	void _printrev(char *s);
 	int numlen(unsigned int i, int base);
-	char *itoa(unsigned int num, int base);
+	char *fitoa(unsigned int num, int base);
 	char *hex(unsigned int num, int base);
 	void ftoa(double n);
 	void _printd(int num, int base);
